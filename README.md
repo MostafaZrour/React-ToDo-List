@@ -14,14 +14,6 @@ A simple and interactive To-Do List application built with React. This project d
 
 ---
 
-## Demo
-
-![Todo List Demo](demo-image-link)
-
-_(Replace this with a link or path to your app's demo image or live preview.)_
-
----
-
 ## Getting Started
 
 Follow these instructions to set up and run the project locally.
