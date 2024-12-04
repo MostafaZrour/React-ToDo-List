@@ -1,3 +1,4 @@
+
 # React To-Do List with `useReducer`
 
 A simple and interactive To-Do List application built with React. This project demonstrates the use of the `useReducer()` hook for state management, making it easier to handle complex state logic.
@@ -29,22 +30,37 @@ Follow these instructions to set up and run the project locally.
 
 1. Clone the repository:
 
-   git clone https://github.com/MostafaZrour/react-todo-list.git
+   git clone https://github.com/your-username/react-todo-list.git
    cd react-todo-list
-   Install the dependencies:
+   ```
 
-2. Copier le code
-## npm install
-Running the App
+2. Install the dependencies:
+
+   ```bash
+   npm install
+   ```
+
+### Running the App
+
 Start the development server:
 
-3. Copier le code
-## npm start
-### Open http://localhost:3000 in your browser to see the app.
+```bash
+npm start
+```
 
-# How It Works
-## This project uses useReducer() to manage the to-do list's state. Here’s a quick overview:
+### Open [http://localhost:3000](http://localhost:3000) in your browser to see the app.
 
-Reducer Function: Defines the logic for updating the state based on dispatched actions.
-Actions: Represent the changes (e.g., adding, toggling, deleting tasks).
-Initial State: Contains the initial list of tasks.
+---
+
+## How It Works
+
+This project uses `useReducer()` to manage the to-do list's state. Here’s a quick overview:
+
+### Reducer Function:
+Defines the logic for updating the state based on dispatched actions.
+
+### Actions:
+Represent the changes (e.g., adding, toggling, deleting tasks).
+
+### Initial State:
+Contains the initial list of tasks.
