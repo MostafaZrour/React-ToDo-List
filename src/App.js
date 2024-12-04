@@ -1,28 +1,29 @@
 import { useState } from "react";
 import { useReducer } from "react";
+import { v4 } from "uuid";
 
 const initialState = [
   { id: 1, title: "Learn React" },
-  { id: 2, title: "Complete the project" , done : true},
+  { id: 2, title: "Complete the project", done: true },
   { id: 3, title: "Read a JavaScript book" },
-  { id: 4, title: "Write a blog post" , done : true }
+  { id: 4, title: "Write a blog post", done: true },
 ];
 
 const reducer = (state, action) => {
   switch (action.type) {
     case "ajouter":
       if (action.title !== "") {
-        return [...state, { id: Date.now(), title: action.title, done: false }];
+        return [...state, { id: v4().slice(0,7), title: action.title, done: false }];
       }
     case "supprimer":
       return [...state.filter((task) => action.id !== task.id)];
-      case "checked":
-        return state.map((task) => {
-          if (action.id === task.id) {
-            return { ...task, done: !task.done };
-          }
-          return task;
-        });
+    case "checked":
+      return state.map((task) => {
+        if (action.id === task.id) {
+          return { ...task, done: !task.done };
+        }
+        return task;
+      });
     default:
       return state;
   }
@@ -31,13 +32,12 @@ const reducer = (state, action) => {
 function App() {
   const [todo, dispatch] = useReducer(reducer, initialState);
   const [data, setData] = useState("");
-console.log(todo);
 
   const complete = {
     textDecoration: "line-through",
   };
   return (
-    <div className="container mt-5">
+    <div className="container mt-5 border p-5 rounded ">
       <h1 className="text-center mb-4">Todo List</h1>
       <form id="todoForm" className="mb-4">
         <div className="mb-3">
@@ -86,7 +86,11 @@ console.log(todo);
                 className="btn btn-outline-success btn-sm"
                 onClick={() => dispatch({ type: "checked", id: task.id })}
               >
-                {task.done ? <i className="bi bi-x-circle"></i> : <i className="bi bi-check-circle"></i>}
+                {task.done ? (
+                  <i className="bi bi-x-circle"></i>
+                ) : (
+                  <i className="bi bi-check-circle"></i>
+                )}
               </button>
               <button
                 className="btn btn-outline-danger btn-sm mx-2"
