@@ -97,7 +97,7 @@ function App() {
             </span>
             <span
               className={`badge ${
-                task.done ? "text-bg-success" : "text-bg-secondary"
+                task.done ? "text-bg-success" : "bg-warning"
               } w-25 p-2`}
             >
               {task.done ? "Tâche terminée" : "Tâche incomplète"}
