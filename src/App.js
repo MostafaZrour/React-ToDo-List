@@ -3,7 +3,7 @@ import { useReducer } from "react";
 import { v4 } from "uuid";
 
 const initialState = [
-  { id: 1, title: "Learn React", done: false },
+  { id: 1, title: "Learn React", done: true },
   { id: 2, title: "Complete the project", done: true },
   { id: 3, title: "Read a JavaScript book", done: false },
   { id: 4, title: "Write a blog post", done: true },
